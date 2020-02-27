@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MAY의 TODO list</title>
     <script src="js/script.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="todo-submit">
         <div id="contentsInput">
             <input id = "content" type="text" placeholder="할 일을 입력해주세요" maxlength="15">
-            <button onclick="btnClick()">저장</button>
+            <button onclick="btnClick()">저장</button> 
         </div>
     </div>
     <div class="todo-list">
@@ -25,8 +26,23 @@
     <div class="done-list">
         <div id="doneTitle">Done</div>
         <div id="doneContents">
-            <ul>장 보기</ul>
+            <ul>
+
+            </ul>
         </div>
     </div>
+    <script>
+        var contentInput = document.getElementById("content");
+        contentInput.onkeyup = function(e){
+            if(e.key === "Enter") {
+                btnClick();
+            }
+        };
+        var btn = document.querySelector("button");
+        btn.onmouseover = function(e) {
+            console.log(e);
+                }
+
+    </script>
 </body>
 </html>
