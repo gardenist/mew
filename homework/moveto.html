@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>moveTo를 입력받기 </title>
+    <script src="moveto.js"></script>
+</head>
+<body>
+    <div>
+        Array는 고정된 값으로, ["하나","둘","셋","넷","다섯","여섯","일곱","여덟"] 입니다 
+    </div>
+    <div id="inputContainer">
+        <ul>
+        <div id="xInput">
+            <label> x 입력 </label>
+            <input type="number" id="xNumber">
+        </div>
+        <div id="yInput">
+            <label> y 입력 </label>
+            <input type="number" id="yNumber">
+        </div>
+        </ul>
+    </div>
+    <div>
+        <button onclick="msmoveTo()">입력하기</button>
+    </div>
+    <p></p>
+    <div id="resultContainer">
+        <span>결과</span>
+        <span id="resultArray">0</span> 
+    </div>
+</body>
+</html>
