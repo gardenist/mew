@@ -11,12 +11,12 @@ function check(word) {
     }
 
 function getOnset(word) {
+let answer = [];
+let finalAnswer;
 // 자음 집단을 만들어줌 
 let arr = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
 for (let k=0; k < word.length; k++) {
 let index = word.codePointAt(k);
-let answer = [];
-let finalAnswer;
 for(var i = 0; i < 20; i++) {
     let minRange = 44032 + (588*i);
     let maxRange = 44032 + (588*i) + 587;
@@ -26,9 +26,9 @@ for(var i = 0; i < 20; i++) {
     else {
     }
 }
+}
 finalAnswer = answer.join('');
 console.log(answer);
-}
 }
 
 getOnset(word);

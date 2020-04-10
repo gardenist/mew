@@ -10,3 +10,4 @@ function wrap(text, start, end) {
   let result = pool.join("\n");
   return result;
 };
+

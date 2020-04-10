@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>로그인하기</title>
+<style>
+    input {
+        width : 200px;
+    }
+    .error {
+        color : red;
+    }
+</style>
+</head>
+<body>
+<form action="/login" method="GET"> 
+    ID : <input name="id" placeholder="아이디를 입력하세요" /> <br>
+    PW : <input name="password" placeholder="비번을 입력하세요" /> <br>
+    <button id="login">로그인</button>
+    <p class="error">아이디나 비번 둘 중 하나 틀렸습니다</p>
+</form>
+</body>
+</html>

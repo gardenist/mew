@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="title">
+    <script>
+        // element의 value에 연결된 객체(model)을 반환합니다
+        // model + element -> modelement
+        function modelement(element) {
+            //초기 값으로 elemenet.value를 value에 담습니다 
+            //함수 내에 지역변수를 선언해 클로져로 사용합니다 
+            let value = element.value; // 아직 element.value값이 없을 테니까 처음에는 undefined가 담김 
+
+            let model = {
+                get value() {
+                    return value;
+                },
+                set value(newValue) {
+                    value = newValue; // 아직 없는 undefined를 newValue로 바꿈 
+                    element.value = newValue; // element의 value도 newValue를 넣음 
+                }
+            };
+
+            // element의 change, keyup 이벤트가 발생하면 model의 값을 element의 value로 바꿈 
+            element.onchage = (e) => model.value = element.value;
+            element.onkeyup = (e) => model.value = element.value; 
+
+            return model; 
+        }
+        
+        let titleInput = document.getElementById('title');
+        let title = modelement(titleInput);
+
+        // title.value의 값을 변경하면 input 태그에 변경한 값이 표시됩니다.
+        title.value = 'Hello, Object!'
+
+        // input 태그에서 직접 값을 수정하면 title.value도 수정됩니다.
+        // 키보드로 값을 수정한 후 아래를 출력하면 입력한 값이 출력됩니다. 
+        console.log(title.value);
+    
+    </script>
+</body>
+</html>
